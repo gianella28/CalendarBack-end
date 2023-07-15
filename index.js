@@ -31,8 +31,12 @@ app.use('/api/auth',require('./routes/auth'));
 app.use('/api/events',require('./routes/events'));
 
 
-
+const port = process.env.PORT || 4000;
 //escuchar peticiones
-app.listen(process.env.PORT,() =>{
-    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
+app.listen(port);
+app.get("/",(req,res)=>{
+    res.send("la PAGINA DE INICIO");
 })
+/*app.listen(process.env.PORT,() =>{
+    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
+})*/
