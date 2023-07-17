@@ -31,10 +31,10 @@ app.use('/api/auth',require('./routes/auth'));
 app.use('/api/events',require('./routes/events'));
 
 
-//const port = process.env.PORT || 4000;
-//escuchar peticiones
-//app.listen(port);
 
+//escuchar peticiones
+
+//sirve si en caso no hay las otras rutas la redirige a la siguiente
 app.get("*",(req, res)=>{
     res.sendFile(__dirname + '/public/index.html');
 })
