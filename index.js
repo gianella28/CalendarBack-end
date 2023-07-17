@@ -31,12 +31,13 @@ app.use('/api/auth',require('./routes/auth'));
 app.use('/api/events',require('./routes/events'));
 
 
-const port = process.env.PORT || 4000;
+//const port = process.env.PORT || 4000;
 //escuchar peticiones
-app.listen(port);
-app.get("/",(req,res)=>{
-    res.send("la PAGINA DE INICIO");
+//app.listen(port);
+
+app.get("*",(req, res)=>{
+    res.sendFile(__dirname + '/public/index.html');
 })
-/*app.listen(process.env.PORT,() =>{
+app.listen(process.env.PORT,() =>{
     console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
-})*/
+})
